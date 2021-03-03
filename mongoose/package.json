@@ -1,0 +1,9 @@
+{
+  "name": "nodeutils-mongoose",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@types/mongoose": "^5.10.3",
+    "nodeutils-pure": "file:../pure"
+  }
+}
