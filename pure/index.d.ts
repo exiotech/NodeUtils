@@ -19,7 +19,8 @@ export declare function isNonNegativeInt(val: any, opts?: {
 
 export declare const REJECTED: 'rejected'
 export declare const FULFILLED: 'fulfilled'
+
 /**
  * Returns { fulfilled: val, rejected: err } map of allSettled promises.
  */
-export declare function allSettled<T extends Promise<any>[]>(promises: T): Promise<{ fulfilled: T extends Promise<infer X>[] ? X : never, rejected: unknown }>
+export declare function allSettled<T extends Promise<any>[]>(promises: T): Promise<{ fulfilled: T extends Promise<infer X>[] ? X[] : never, rejected: unknown[] }>
