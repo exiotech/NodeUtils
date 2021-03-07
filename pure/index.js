@@ -18,7 +18,36 @@ function isNonNegativeInt(val, {
     return true
 }
 
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+async function allSettled(promises) {
+    if(!(promises instanceof Array)) {
+        throw new Error(`Promises Must be array of promises`)
+    }
+
+    const settled = await Promise.allSettled(promises)
+    return settled.reduce((map, p) => {
+        switch (p.status) {
+            case FULFILLED:
+                map[FULFILLED].push(p.value)
+                break
+            case REJECTED:
+                map[REJECTED].push(p.reason)
+                break
+            default:
+        }
+
+        return map
+    }, {
+        [FULFILLED]: [],
+        [REJECTED]: []
+    })
+}
+
 module.exports = {
     sleep,
     isNonNegativeInt,
+    allSettled,
+    REJECTED,
+    FULFILLED,
 }

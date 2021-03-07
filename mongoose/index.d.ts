@@ -6,7 +6,7 @@ import { Model, Document, FilterQuery } from 'mongoose'
  * @param Model - Model to perform pagination on
  * @param options - Pagination options
  */
-declare function paginatedQuery<T extends Document = any>(Model: Model<T, any>, options?: {
+export declare function paginatedQuery<T extends Document = any>(Model: Model<T, any>, options?: {
     /**
      * Query filters
      * @default {}
@@ -57,3 +57,4 @@ declare function paginatedQuery<T extends Document = any>(Model: Model<T, any>, 
     totalCount: number,
     items: T[]
 }>
+
