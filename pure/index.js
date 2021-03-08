@@ -47,7 +47,6 @@ async function allSettled(promises) {
     return mapped
 }
 
-allSettled([Promise.resolve({name: 'aaaa'}), Promise.reject(2)])
 
 module.exports = {
     sleep,
